@@ -184,8 +184,19 @@ git clone hostname:.cs615.git cs615 # remote through ssh config!
 
 # AWS EC2
 
+`whois 155.246.0.0/16`
 
+layers around the instance:
+- subnet - allows you to assign IP space (RFC1918) 10/8 172.16/12 192.168/16
+- security groups - can be used to allow/disallow traffic
+- vpc - virtual private cloud, needs gateway
 
+Had to create a user!!!
+Then had to create access key.
+Then had to do `aws configure` with the Access Key ID and secret access key
+and region name and output format.
+
+---
 
 # Checkpoint
 
@@ -229,3 +240,27 @@ Please enter below a statement that you have read and understood its meaning and
 > permitted use of AI technologies and have understood the meaning
 > and implication. I won't forget to share a link to any AI prompting
 > that I do.
+
+---
+
+Meetup Requirement:
+
+
+Weekly Presentation date:
+Partner - Andrew Schomber
+
+
+Little Snitch - monitors laptop and checks whenever some software wants to make an outbound connection.
+
+We need a dualstack system IPv4 and v6 support.
+
+Host *amazonaws.com
+    User root
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+
+[jschauma aliases](https://raw.githubusercontent.com/jschauma/cloud-functions/refs/heads/main/awsfuncs)
+
+https://www.netmeister.org/blog/ec2-ipv6.html
+
+ping runs ICMP, which run on raw sockets
